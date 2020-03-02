@@ -4,7 +4,3 @@ Addition of validation function from Neil Shepperd's GPT-2 [fork](https://github
 
 ![](loss_before_validation.png)
 ![](loss_after_validation.png)
-
-## License
-
-MIT
