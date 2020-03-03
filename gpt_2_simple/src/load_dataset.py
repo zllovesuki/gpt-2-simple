@@ -71,12 +71,13 @@ class Sampler(object):
     'Fairly' means that the distribution is the same as sampling from one concatenated chunk,
     but without crossing chunk boundaries."""
 
-    def __init__(self, chunks):
+    def __init__(self, chunks, seed=None): # added seed=None for validation
         self.chunks = chunks
         self.total_size = sum(chunk.shape[0] for chunk in chunks)
         self.boundaries = [0]
         for i in range(len(chunks)):
             self.boundaries.append(self.boundaries[-1] + chunks[i].shape[0])
+        self.rs = np.random.RandomState(seed=seed) # added for validation
 
     def sample(self, length):
         assert length < self.total_size // len(
