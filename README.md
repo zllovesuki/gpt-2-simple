@@ -4,7 +4,7 @@ Validation function from Neil Shepperd's [GPT-2 package](https://github.com/nshe
 
 ## Usage
 
-    import gpt_2_simple_valid as gpt2
+    import gpt_2_simple as gpt2
     import os
     import requests
     
