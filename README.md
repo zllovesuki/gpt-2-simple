@@ -1,6 +1,6 @@
 # gpt-2-simple
 
-Addition of validation function from Neil Shepperd's GPT-2 [package](https://github.com/nshepperd/gpt-2) to Max Woolf's GPT-2 [package](https://github.com/minimaxir/gpt-2-simple).
+Validation function from Neil Shepperd's GPT-2 [package](https://github.com/nshepperd/gpt-2) added to Max Woolf's GPT-2 [package](https://github.com/minimaxir/gpt-2-simple).
 
 
 
