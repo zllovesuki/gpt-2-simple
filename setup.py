@@ -54,7 +54,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Max Woolf',
     author_email='max@minimaxir.com',
-    url='https://github.com/minimaxir/gpt-2-simple',
+    url='https://github.com/zllovesuki/gpt-2-simple',
     keywords=['deep learning', 'tensorflow', 'text generation'],
     classifiers=[],
     license='MIT',
