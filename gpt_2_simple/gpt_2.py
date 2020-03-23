@@ -158,8 +158,6 @@ def finetune(sess,
     See that file for parameter definitions.
     """
 
-    # assert model_name not in ['774M', '1558M'] or multi_gpu, "Currently, a modern single GPU cannot finetune the 774M GPT-2 model or larger."
-
     SAMPLE_DIR = 'samples'
 
     checkpoint_path = os.path.join(checkpoint_dir, run_name)
@@ -189,11 +187,6 @@ def finetune(sess,
         raise ValueError(
             "Can't get samples longer than window size: %s" % hparams.n_ctx)
 
-    if model_name not in ['117M', '124M']:
-        use_memory_saving_gradients = True
-        only_train_transformer_layers = True
-        accumulate_gradients = 1
-
     context = tf.compat.v1.placeholder(tf.int32, [batch_size, None])
     gpus = []
 
@@ -204,7 +197,7 @@ def finetune(sess,
     loss = tf.reduce_mean(
         input_tensor=tf.nn.sparse_softmax_cross_entropy_with_logits(
             labels=context[:, 1:], logits=output['logits'][:, :-1]))
-            
+
 	# validation code
     if val_every > 0:
         val_context = tf.placeholder(tf.int32, [val_batch_size, None])
